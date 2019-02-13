@@ -16,7 +16,7 @@ class AdminCmsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../../resources'   => resource_path('views/'),
+            __DIR__.'/../../resources'   => resource_path('/'),
             __DIR__.'/../../public' => public_path('/'),
         ], 'admincmsstart');
 
