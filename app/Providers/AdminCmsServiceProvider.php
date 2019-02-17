@@ -15,13 +15,26 @@ class AdminCmsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        //Rotas
+        Route::namespace('OrlandoLibardi\OlCms\AdminCms\app\Http\Controllers\Admin')
+        ->middleware(['web', 'auth'])
+        ->prefix('admin')
+        ->group(__DIR__. '/../../routes/web.php');
+
+        //registrar a views
+        $this->loadViewsFrom( __DIR__.'/../../resources/views/admin/', 'viewAdminCms');
+
         $this->publishes([
             __DIR__.'/../../resources'   => resource_path('/'),
             __DIR__.'/../../public' => public_path('/'),
-        ], 'admincmsstart');
-
+            __DIR__.'/../../database/migrations/' => database_path('migrations'),
+            __DIR__.'/../../database/seeds/' => database_path('seeds'),
+        ], 'config');
+   
         
     }
+
 
     /**
      * Register any application services.
@@ -32,4 +45,5 @@ class AdminCmsServiceProvider extends ServiceProvider
     {
         
     }
+    
 }
