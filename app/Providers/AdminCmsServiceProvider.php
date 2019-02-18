@@ -1,10 +1,8 @@
 <?php
 
 namespace OrlandoLibardi\OlCms\AdminCms\app\Providers;
-
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Route;
 
 class AdminCmsServiceProvider extends ServiceProvider
 {
