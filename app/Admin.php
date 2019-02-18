@@ -5,7 +5,7 @@ namespace OrlandoLibardi\OlCms\AdminCms\app;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model
+class Admin extends Model
 {
 
     protected $table = "admin_pages";
