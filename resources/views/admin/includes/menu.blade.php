@@ -1,6 +1,6 @@
 @if($pages)
     @foreach($pages as $page)
-       
+       @if(array_has($all_permissions, $page->minimun_can))
         @if(count($page->childs) > 0)
             <li class="divider" data-toogle="{{$page->name}}">
                 <a href="#">
@@ -20,6 +20,6 @@
                 </a>
             </li>
         @endif
-        
+      @endif  
     @endforeach
 @endif

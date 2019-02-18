@@ -21,7 +21,7 @@ class AdminCmsServiceProvider extends ServiceProvider
         ->group(__DIR__. '/../../routes/web.php');
 
         //registrar a views
-        $this->loadViewsFrom( __DIR__.'/../../resources/views/admin/', 'viewAdminCms');
+        //$this->loadViewsFrom( __DIR__.'/../../resources/views/admin/', 'viewAdminCms');
 
         $this->publishes([
             __DIR__.'/../../resources'   => resource_path('/'),

@@ -37,8 +37,8 @@
                         </div>
                     </li>
                     @inject('pages', 'OrlandoLibardi\OlCms\AdminCms\app\Admin')
-
-                    @include('admin.includes.menu', ['pages' => $pages->all()])
+                    @inject('pages', 'OrlandoLibardi\OlCms\AdminCms\app\Admin')
+                    @include('admin.includes.menu', ['pages' => $pages->all(), 'all_permissions' => Auth::user()->getAllPermissions()->pluck('name','name')])
                     <li class="divider">
                         <a class="navbar-minimalize btn-toogle" href="javascript:;">
                             <i class="fa fa-bars"></i>

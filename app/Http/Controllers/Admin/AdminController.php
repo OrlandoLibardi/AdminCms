@@ -16,7 +16,7 @@ class AdminController extends Controller
     */
     public function index(Request $request) {
 
-        return view('viewAdminCms::dashboard');
+        return view('admin.dashboard');
 
     }
 
