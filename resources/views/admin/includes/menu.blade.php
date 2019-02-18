@@ -8,8 +8,8 @@
                     <span class="nav-label">{{$page->name}}</span>
                     <span class="fa arrow"></span>
                 </a>
-                <ul class="nav nav-second-level collapse in">            
-                    @include('admin.inlcudes.menu-childs', ['childs' => $page->childs()])
+                <ul class="nav nav-second-level">            
+                    @include('admin.includes.menu-childs', ['childs' => $page->childs])
                 </ul>
             </li>
         @else

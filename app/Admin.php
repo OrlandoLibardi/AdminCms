@@ -20,7 +20,6 @@ class Admin extends Model
     ];
 
 
-
     public function childs(){
         return $this->hasMany('OrlandoLibardi\OlCms\AdminCms\app\Admin', 'parent_id', 'id');
     }
