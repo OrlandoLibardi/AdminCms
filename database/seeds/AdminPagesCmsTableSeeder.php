@@ -17,7 +17,7 @@ class AdminPagesCmsTableSeeder extends Seeder
         
         Admin::create([
             'name' => 'Dashboard',
-            'route' => 'admin.index',
+            'route' => 'index.index',
             'icon' => 'fa fa-home',
             'parent_id' => 0,
             'minimun_can' => 'list',

@@ -36,7 +36,9 @@
                             <img src="{{ asset('assets/theme-admin/images/logo.png') }}">
                         </div>
                     </li>
+                    @inject('pages', 'OrlandoLibardi\OlCms\AdminCms\app\Admin')
 
+                    @include('admin.includes.menu', ['pages' => $pages->all()])
                     <li class="divider">
                         <a class="navbar-minimalize btn-toogle" href="javascript:;">
                             <i class="fa fa-bars"></i>
