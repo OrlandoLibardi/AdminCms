@@ -16,7 +16,7 @@ class Admin extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'route', 'icon', 'parent_id', 'minimun_can'
+        'name', 'route', 'icon', 'parent_id', 'minimun_can', 'order_at'
     ];
 
 
