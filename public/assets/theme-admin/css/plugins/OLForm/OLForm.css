@@ -169,12 +169,46 @@ transform: rotate(360deg);
 	content: "";
 }
 
+.modal-files > .modal-lg{
+	width: 80% !important;
+}
+
+.modal-files .modal-content {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.modal-files .ibox-title{
+	border-top: none;
+	border-bottom: 2px solid #e7eaec;
+	padding: 0px;
+	min-height:0px;
+}
+.modal-files #OLFiles-list-dir{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.file .file-name > p{
+	height: 20px;
+	overflow: hidden;
+}
+
+.file-box{
+	opacity: 0.7;
+	transition: all .3s linear;
+}
+.file-box:hover{
+	opacity: 1;
+}
+
 @keyframes dropzoneCollors{
-			0%{
-				color:#dee2e6;
-			}to{
-				color:#4dbd74;
-			 transform: rotate(360deg);
-			}
-		}
+	0%{
+		color:#dee2e6;
+	}to{
+		color:#4dbd74;
+		transform: rotate(360deg);
+	}
+}
 

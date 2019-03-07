@@ -138,10 +138,10 @@
 		function showErros(exr) {
 
 				if (settings.listErrorPositionBlock) {
-					var errors = "";
+					var errors = "", i= 0;
 					$.each(exr.responseJSON.errors, function(a, b) {
 						if (b != undefined) {
-							errors += "<p>" + eval(a + 1) + " - " + b + "</p>";
+							errors += "<p>" + eval(i + 1) + " - " + b + "</p>";
 						}
 					});
 
@@ -190,7 +190,7 @@
             }else{
                 obj += '<span class="olform-icon-error"></span>';
 				obj += '<p class="olform-title-load">';
-				obj += message+'<br />';
+				obj += msg+'<br />';
 				obj += '<a href="javascript:;" class="btn-close-olform-error btn btn-danger text-uppercase">Ok, entendi.</a>';
 				obj += '</p>';
             }

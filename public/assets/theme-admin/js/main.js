@@ -1,10 +1,3 @@
-$(document).ready(function(){
-		$.get("/admin/contatos/count/", { '_token'  : $('input[name=_token]').val() }, function(data){
-			var json = $.parseJSON(data);
-			$("#contatos-count").html(json['success']);
-		});
-	});
-
 var mask = {
 
     money: function() {

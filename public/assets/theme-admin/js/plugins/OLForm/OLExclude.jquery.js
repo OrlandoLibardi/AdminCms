@@ -213,10 +213,11 @@
 					showAlert(settings.textSendding, 'loading');
 				},
 				success: function(exr) {
-					//console.log(exr);
+					console.log(exr);
 					showAlert(exr.message, exr.status);
 				},
 				error: function(exr, sender) {
+					console.log(exr);
 					//showAlert(exr.responseJSON.message, exr.responseJSON.status);
 
                     var status = exr.status;
