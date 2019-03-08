@@ -29,10 +29,7 @@ class AdminCmsServiceProvider extends ServiceProvider
             __DIR__.'/../../database/migrations/' => database_path('migrations'),
             __DIR__.'/../../database/seeds/' => database_path('seeds'),
         ], 'config');
-        /**
-         * Language
-         */
-        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang/pt-br/', 'olcms');
+        
         
     }
 
