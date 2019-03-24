@@ -48,19 +48,25 @@ class AdminOlCmsCommand extends Command{
      */
     public function handle()
     {
-        $this->info('iniciando administrador');
+        $this->info('1- Copiar arquivos do OLCMS Admin');
         $this->call('vendor:publish', ['--provider'=> 'OrlandoLibardi\OlCms\AdminCms\app\Providers\AdminCmsServiceProvider', '--tag' => 'config']);
-        $this->info('iniciando migrate');        
+        
+        $this->info('2- Migrate:');        
         $this->call('migrate');
-        $this->info('composer dump-autoload');
+
+        $this->info('3- Composer dump-autoload');
         $this->composer->dumpAutoloads();
-        $this->info('cache clear');
+        
+        $this->info('4- Cache Clear');
         $this->call('cache:clear');
-        $this->info('iniciando seed');
+
+        $this->info('5- Composer dump Optimized');
+        $this->composer->dumpOptimized();
+
+        $this->info('6- Seedes');
         $this->call('db:seed', ['--class' => 'AdminPagesCmsTableSeeder']); 
         
-        $this->info('Concluído:');
-        $this->info('Administrador instalado com sucesso!');        
+        $this->info('Concluído: Administrador instalado com sucesso!');        
 
         
         return 0;
