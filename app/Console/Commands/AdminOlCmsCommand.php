@@ -48,13 +48,15 @@ class AdminOlCmsCommand extends Command{
      */
     public function handle()
     {
-        
+        $this->info('iniciando administrador');
         $this->call('vendor:publish', ['--provider'=> 'OrlandoLibardi\OlCms\AdminCms\app\Providers\AdminCmsServiceProvider', '--tag' => 'config']);
-                
+        $this->info('iniciando migrate');        
         $this->call('migrate');
-
+        $this->info('composer dump-autoload');
         $this->composer->dumpAutoloads();
-
+        $this->info('cache clear');
+        $this->call('cache:clear');
+        $this->info('iniciando seed');
         $this->call('db:seed', ['--class' => 'AdminPagesCmsTableSeeder']); 
         
         $this->info('Concluído:');
