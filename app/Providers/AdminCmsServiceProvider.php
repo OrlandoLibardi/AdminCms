@@ -6,10 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 class AdminCmsServiceProvider extends ServiceProvider
 {
-    protected $commands = [
-        'OrlandoLibardi\OlCms\AdminCms\app\Console\Commands\AdminOlCmsCommand',
-    ];
-
     /**
      * Bootstrap any application services.
      *
@@ -35,15 +31,6 @@ class AdminCmsServiceProvider extends ServiceProvider
         ], 'config');
         
         
-    }
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->commands($this->commands);
     }
 
 }
