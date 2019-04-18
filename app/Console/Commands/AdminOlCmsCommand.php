@@ -48,7 +48,6 @@ class AdminOlCmsCommand extends Command{
      */
     public function handle()
     {
-<<<<<<< HEAD
         $this->info('1- Copiar arquivos do OLCMS Admin');
         $this->call('vendor:publish', ['--provider'=> 'OrlandoLibardi\OlCms\AdminCms\app\Providers\AdminCmsServiceProvider', '--tag' => 'config']);
         
@@ -65,15 +64,6 @@ class AdminOlCmsCommand extends Command{
         $this->composer->dumpOptimized();
 
         $this->info('6- Seedes');
-=======
-        
-        $this->call('vendor:publish', ['--provider'=> 'OrlandoLibardi\OlCms\AdminCms\app\Providers\AdminCmsServiceProvider', '--tag' => 'config']);
-                
-        $this->call('migrate');
-
-        $this->composer->dumpAutoloads();
-
->>>>>>> parent of 8bfc51f... adicionado comando
         $this->call('db:seed', ['--class' => 'AdminPagesCmsTableSeeder']); 
         
         $this->info('Concluído: Administrador instalado com sucesso!');        
