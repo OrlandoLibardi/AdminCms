@@ -199,9 +199,30 @@ transform: rotate(360deg);
 	opacity: 0.7;
 	transition: all .3s linear;
 }
-.file-box:hover{
+.file-box:hover,
+.file-box:hover > .btn{
 	opacity: 1;
 }
+.file-box {
+	position: relative;
+}
+.file-box > .btn{
+	position: absolute;
+	float: left;
+	top: 10px;
+	z-index: 10;
+	opacity: 0;
+}
+.file-box > .folder-rename,
+.file-box > .file-edit{
+	right: 30px;
+}
+
+.file-box > .folder-delete,
+.file-box > .file-delete{
+	right: 60px;
+}
+
 
 @keyframes dropzoneCollors{
 	0%{
