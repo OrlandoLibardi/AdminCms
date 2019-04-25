@@ -42,15 +42,15 @@
 		function checkValues() {
 
 				if (!settings.action) {
-					throw new Error('OLExclude: ACTION não informada!');
+					console.error('OLExclude: ACTION não informada!');
 				}
 
 				if (!settings.inputCheckName || findInputCheckBox(settings.inputCheckName) == 0) {
-					throw new Error('OLExclude: INPUT CHECK não informado ou não encontrado!');
+					console.error('OLExclude: INPUT CHECK não informado ou não encontrado!');
 				}
 
 				if (!settings.inputCheckAll || findInputCheckBox(settings.inputCheckAll) == 0) {
-					throw new Error('OLExclude: INPUT CHECK ALL não informado ou não encontrado!');
+					console.error('OLExclude: INPUT CHECK ALL não informado ou não encontrado!');
 				}
 
 				if (!settings.token) {
@@ -76,7 +76,7 @@
 				token = (!token) ? $("input[name=token]").val() : token;
 
 				if (!token) {
-					throw new Error('OLExclude: TOKEN e ou CSRF-TOKEN não informado ou não encontrado!');
+					console.error('OLExclude: TOKEN e ou CSRF-TOKEN não informado ou não encontrado!');
 				}
 
 				settings.token = token;
@@ -289,7 +289,9 @@
 					console.log("call excludeCallback");
 					$(".olform-bg-red").fadeOut(300, function() {
 						excludeCallback();
+						$(this).remove();
 					});
+					/*$(".olform-bg-red").remove();*/
 				});
 			});
 		});

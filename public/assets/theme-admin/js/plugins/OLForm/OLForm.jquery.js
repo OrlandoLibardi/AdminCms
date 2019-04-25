@@ -78,7 +78,7 @@
 			token = (!token) ? $("input[name=_token]").val() : token;
 			token = (!token) ? $("input[name=token]").val() : token;
 			if (!token) {
-				throw new Error('OLFORM: TOKEN e ou CSRF-TOKEN não encontrados!');
+				console.error('OLFORM: TOKEN e ou CSRF-TOKEN não encontrados!');
 			}
 			settings.token = token;
 		}

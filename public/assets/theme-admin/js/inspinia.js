@@ -19,7 +19,7 @@ $(document).ready(function () {
     $('#side-menu').metisMenu();
 
     // Collapse ibox function
-    $('.collapse-link').on('click', function () {
+    $(document).on('click', '.collapse-link', function () {
         var ibox = $(this).closest('div.ibox');
         var button = $(this).find('i');
         var content = ibox.children('.ibox-content');
@@ -33,7 +33,7 @@ $(document).ready(function () {
     });
 
     // Close ibox function
-    $('.close-link').on('click', function () {
+    $(document).on('click', '.close-link', function () {
         var content = $(this).closest('div.ibox');
         content.remove();
     });
