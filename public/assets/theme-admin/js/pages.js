@@ -8,7 +8,6 @@ function savePageTemplate(){
     var contents = $('#iframe')[0].contentWindow.getAllValues();
     $("input[name=contents]").val(JSON.stringify(contents));
     $("form#form-page").submit();
-
 }
 /*Alterar a imagem*/
 function changeImage(a){
@@ -19,7 +18,6 @@ function changeImage(a){
 function setValues(id, dados, name){
     $("input[name="+name+"_id]").val(id);
     for(var key in dados){
-        console.log(key, dados[key].value);
         $(dados[key].type+"[name="+name+key+"]").val(dados[key].value);
     }
     $("#modal-"+name).modal('show');

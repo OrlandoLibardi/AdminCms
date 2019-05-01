@@ -1,10 +1,17 @@
 .ol-btn-group {
- position: absolute; float: left; width: 100px; height: auto; padding: 1px; background: #FFF; border: 1px solid #e7eaec;
+	position: absolute;
+	float: left;
+	width: 80px;
+	height: auto;
+	z-index: 9999;
+	display: none;
+	top: 0px;
+	left: 0px;
 }
 
-.ol-btn{
+.btn-template {
 	display: inline-block;
-	padding: 5px 10px; 
+	padding: 5px 10px;
 	margin-bottom: 0;
 	font-size: 12px;
 	font-weight: 400;
@@ -13,16 +20,19 @@
 	white-space: nowrap;
 	vertical-align: middle;
 	cursor: pointer;
-	background-image: none;
 	border: 1px solid transparent;
 	border-radius: 4px;
+	widht: 32px;
+	height: 30px;
 }
 
-.ol-btn-edit{
-	background-color: #f8ac59;
-	border-color: #f8ac59;
-	color: #FFFFFF;
+.btn-template img {
+	display: block;
+	max-width: 15px;
 }
-.ol-btn-delete{
-	background-color: #ec4758; border-color: #ec4758; color: #FFFFFF;
+
+.object-editable {
+	position: relative;
+	float: left;
+	width: 100%;
 }

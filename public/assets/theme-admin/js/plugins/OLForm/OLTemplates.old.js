@@ -9,13 +9,9 @@ $(document).on("click", "a", function (e) {
 });
 
 
-
-
-$("body").css("opacity", 0);
-
 $(document).ready(function () {
-    $(document).on("click", "button[name=edit_title], button[name=edit_content], button[name=edit_image], button[name=edit_picture]", function () {
-        console.log($(this).attr("data-target"));
+    initButtons();
+    $(document).on("click", "button[name=edit_title], button[name=edit_content], button[name=edit_image]", function () {
         identifyObject($("*[data-id=" + $(this).attr("data-target") + "]"));
     });
 
@@ -26,20 +22,12 @@ $(document).ready(function () {
         setTimeout(function(){ initButtons(); }, 200);
     });
 
-    setTimeout(function(){
-        
-        $("body").css("opacity", 1);
-        initButtons();
-
-    }, 1000);
-    
 });
 
 
 
 
-function setMessage(type, id) 
-{
+function setMessage(type, id) {
     if (typeof window.parent.olMessage == 'function') {
         console.log("enviar para parent: ", type, id);
         window.parent.olMessage(type, id);
@@ -63,9 +51,6 @@ function identifyObject($this) {
 
     }else if(type == 'image'){
         dados = getImageVars($this);
-    }else if(type == 'picture')
-    {
-        dados = gePictureVars($this);
     }
 
     window.parent.setValues(id, dados, type);
@@ -313,46 +298,33 @@ function getImageVars($this) {
 
     return result;
 }
-/*get image*/
-function gePictureVars($this) {
-    
-    result = getImageVars($this);
-
-    return result;
-}
 /*
 * init buttons
 */
 function initButtons(){
     $("body").find('*[data-editable=true]').each(function () {
-        
-        $(this).find('h1, h2, h3, h4, h5, h6, img, div, picture').each(function () {
+
+        $(this).find('h1, h2, h3, h4, h5, h6, img, div').each(function () {
             $(this).css({
                 display: 'inline-block'
             });
         });
-        
+
+
         createButtons($(this));
     });
 }
 /*
 * Create buttons
 */
-function createButtons($this) 
-{
-
-    console.log("CReateButtons", $this);
-    console.log("CReateButtons", $this.outerHeight(true));
-    console.log("CReateButtons", $this.outerHeight());
-    
-
+function createButtons($this) {
     var obj, style, style_btn, style_btn_edit, style_btn_delete, top, width, left;
 
-    top = eval(parseInt($this.offset().top) + ($this.height() / 2) - 10);
+    top = eval(parseInt($this.offset().top) - 10);
     width = eval(($this.width() / 2) - 40);
     left = eval(parseInt($this.offset().left) + width);
 
-    $this.find('h1, h2, h3, h4, h5, h6, img, div, picture').each(function () {
+    $this.find('h1, h2, h3, h4, h5, h6, img, div').each(function () {
         top = eval(parseInt($(this).offset().top) - 10);
         width = $(this).width();
         left = eval(parseInt($(this).offset().left) + width);

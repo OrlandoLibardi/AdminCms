@@ -11,6 +11,7 @@
 (function($) {
 	"use strict";
 	$.fn.OLForm = function(options, callback) {
+
 		var $el = $(this);
 		var $document = $(document);
 		var $body = $('body');
@@ -127,7 +128,11 @@
 			}
 			/*Success after comunication success*/
 		function isCallback() {
+			console.log('isCallback');
 				if (typeof callback == 'function') {
+
+					console.log('isCallback Function ', callback);
+
 					callback.call(this, dataSuccess);
 				}
 				else {
